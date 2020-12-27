@@ -82,7 +82,7 @@
  * providing the source code to your customers.)
  */
 #ifndef SOURCE_CODE_URL
-  #define SOURCE_CODE_URL "https://github.com/Sergey1560/Marlin_FB4S"
+  #define SOURCE_CODE_URL "https://github.com/ksergey/Marlin_FBG5"
 #endif
 
 /**
@@ -98,7 +98,7 @@
    */
 #ifndef WEBSITE_URL
   //#define WEBSITE_URL "https://marlinfw.org"
-  #define WEBSITE_URL "https://github.com/Sergey1560/Marlin_FB4S"
+  #define WEBSITE_URL "https://github.com/ksergey/Marlin_FBG5"
 #endif
 
 /**
