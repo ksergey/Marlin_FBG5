@@ -85,7 +85,7 @@
  */
 
 // Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
-#define SHOW_BOOTSCREEN
+//#define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
 //#define SHOW_CUSTOM_BOOTSCREEN
@@ -499,9 +499,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.0 }
     #define DEFAULT_Kd_LIST { 114.00, 112.0 }
   #else
-    #define DEFAULT_Kp 14
-    #define DEFAULT_Ki 0
-    #define DEFAULT_Kd 50
+    #define DEFAULT_Kp 17.24
+    #define DEFAULT_Ki 1.23
+    #define DEFAULT_Kd 60.48
   #endif
 #endif // PIDTEMP
 
