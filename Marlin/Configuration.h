@@ -415,7 +415,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -499,9 +499,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.0 }
     #define DEFAULT_Kd_LIST { 114.00, 112.0 }
   #else
-    #define DEFAULT_Kp  17.04
-    #define DEFAULT_Ki   1.31
-    #define DEFAULT_Kd  55.34
+    #define DEFAULT_Kp 9.15
+    #define DEFAULT_Ki 0.55
+    #define DEFAULT_Kd 38.13
   #endif
 #endif // PIDTEMP
 
@@ -546,9 +546,9 @@
 
 
   //FB4S
-  #define DEFAULT_bedKp 40.68
-  #define DEFAULT_bedKi 7.93
-  #define DEFAULT_bedKd 139.15
+  #define DEFAULT_bedKp 56.06
+  #define DEFAULT_bedKi 10.76
+  #define DEFAULT_bedKd 194.70
 
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
@@ -579,7 +579,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 710 
+#define EXTRUDE_MAXLENGTH 710
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -1538,7 +1538,7 @@ EEPROM_W25Q
 #undef SRAM_EEPROM_EMULATION
 #undef I2C_EEPROM_AT24C16
 #undef SPI_EEPROM_W25Q
-#undef USE_WIRED_EEPROM 
+#undef USE_WIRED_EEPROM
 #define MARLIN_EEPROM_SIZE  4096
 #endif
 
