@@ -11,6 +11,7 @@
 */
 
 #include "../../../inc/MarlinConfigPre.h"
+#include "../../../src/core/language.h"
 
 #if HAS_GRAPHICAL_TFT
 
@@ -29,10 +30,9 @@ extern const uint8_t Helvetica18_symbols[71] = {
   7,7,7,7,0,15,56,124,198,198,198,124,56,  // 0x09 - LCD_STR_DEGREE
 };
 
-#define ru 0xBABA
-#if (LCD_LANGUAGE == ru)
+#ifdef DISPLAY_CHARSET_RUS
 extern const uint8_t Helvetica18[8582] = {
-  0,28,37,253,248,19,4,37,9,49,32,255,251,24,251,19,251,  // tFont
+  0,28,37,253,248,19,4,37,9,49,32,255,251,24,251,19,251,  // tFont
 /* */ 0, 0, 0, 6, 0, 1, 
 /*!*/ 3, 9, 9, 7, 2, 0, 0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,0xE0,
 /*"*/ 5, 6, 6, 9, 2, 13, 0xD8,0xD8,0xD8,0xD8,0xD8,0x90,
@@ -259,7 +259,6 @@ extern const uint8_t Helvetica18[8582] = {
 /**/ 12, 23, 46, 13, 0, 251, 0x19,0x80,0x19,0x80,0x0,0x0,0x0,0x0,0xC0,0x30,0xC0,0x30,0x60,0x30,0x70,0x60,0x30,0x60,0x38,0xE0,0x18,0xC0,0x18,0xC0,0xD,0x80,0xD,0x80,0x7,0x80,0x7,0x0,0x3,0x0,0x3,0x0,0x6,0x0,0x6,0x0,0xC,0x0,0x3C,0x0,0x38,0x0
 };
 #else
-
 extern const uint8_t Helvetica18[7307] = {
   0,28,37,253,248,19,4,37,9,49,32,255,251,24,251,19,251,  // tFont
   0,0,0,6,0,1,2,19,19,6,2,0,192,192,192,
@@ -719,8 +718,5 @@ extern const uint8_t Helvetica18[7307] = {
   224,24,192,24,192,13,128,13,128,7,128,7,0,3,0,3,
   0,6,0,6,0,12,0,60,0,56,0
 };
-
-#endif // DISPLAY_CHARSET_ISO10646_5
-#undef ru
-
+#endif
 #endif // HAS_GRAPHICAL_TFT

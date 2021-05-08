@@ -1,6 +1,9 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ *
+ * Based on Sprinter and grbl.
+ * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,6 +33,7 @@
 */
 
 #include "../../../inc/MarlinConfigPre.h"
+#include "../../../src/core/language.h"
 
 #if HAS_GRAPHICAL_TFT
 
@@ -46,6 +50,7 @@ typedef struct __attribute__((__packed__)) {
 } tGlyph;
 */
 
+
 extern const uint8_t Helvetica14_symbols[63] = {
   0,18,19,0,252,14,0,0,0,0,1,9,252,16,252,14,252, // tFont
   0,0,0,0,0,0,  // 0x01 - LCD_STR_REFRESH
@@ -59,10 +64,9 @@ extern const uint8_t Helvetica14_symbols[63] = {
   5,5,5,5,0,11,112,216,136,216,112,  // 0x09 - LCD_STR_DEGREE
 };
 
-#define ru 0xBABA
-#if (LCD_LANGUAGE == ru)
+#ifdef DISPLAY_CHARSET_RUS
 extern const uint8_t Helvetica14[6319] = {
-  0,18,19,0,252,14,2,150,6,83,32,255,252,16,252,14,252, // tFont
+  0,18,19,0,252,14,2,150,6,83,32,255,252,16,252,14,252, // tFont
 /* */ 0, 0, 0, 5, 0, 0, 
 /*!*/ 2, 14, 14, 6, 2, 0, 0xC0,0xC0,0xC0,0xC0,0xC0,0xC0,0xC0,0xC0,0xC0,0xC0,0x0,0x0,0xC0,0xC0,
 /*"*/ 5, 5, 5, 5, 0, 9, 0xD8,0xD8,0xD8,0xD8,0xD8,
@@ -288,7 +292,6 @@ extern const uint8_t Helvetica14[6319] = {
 /**/ 9, 18, 36, 11, 1, 252, 0xC0,0x0,0xC0,0x0,0xC0,0x0,0xC0,0x0,0xDE,0x0,0xFF,0x0,0xE3,0x0,0xC1,0x80,0xC1,0x80,0xC1,0x80,0xC1,0x80,0xE3,0x0,0xFF,0x0,0xDE,0x0,0xC0,0x0,0xC0,0x0,0xC0,0x0,0xC0,0x0,
 /**/ 8, 18, 18, 10, 1, 252, 0x66,0x66,0x0,0x0,0xC3,0xC3,0xC3,0x66,0x66,0x66,0x24,0x3C,0x18,0x18,0x18,0x18,0x70,0x70
 };
-
 #else
 extern const uint8_t Helvetica14[5005] = {
   0,18,19,0,252,14,2,150,6,83,32,255,252,16,252,14,252,  // tFont
@@ -605,6 +608,5 @@ extern const uint8_t Helvetica14[5005] = {
   0,192,0,192,0,8,18,18,10,1,252,102,102,0,0,195,
   195,195,102,102,102,36,60,24,24,24,24,112,112
 };
-#endif // (LCD_LANGUAGE == ru) || (LCD_LANGUAGE == test)
-
+#endif
 #endif // HAS_GRAPHICAL_TFT
