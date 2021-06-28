@@ -74,17 +74,10 @@
   #define COLOR_BACKGROUND    0x0000  // #000000
 #endif
 #ifndef COLOR_SELECTION_BG
-<<<<<<< HEAD
-  #define COLOR_SELECTION_BG    0xFC00  // #FF7F00
-#endif
-#ifndef COLOR_WEBSITE_URL
-  #define COLOR_WEBSITE_URL     0xFFFF
-=======
   #define COLOR_SELECTION_BG  0x9930  // #992380
 #endif
 #ifndef COLOR_WEBSITE_URL
   #define COLOR_WEBSITE_URL   0x03B7  // #0075BD
->>>>>>> e46e5fa2740bcfcb1a86269c726d5c112d15e5b4
 #endif
 
 #ifndef COLOR_INACTIVE
