@@ -140,10 +140,17 @@ BlTouch
 
 /*
 Управление питанием
+https://sergey1560.github.io/fb4s_howto/mks_pwc/
 */
-#define SUICIDE_PIN                       PE5   
-#define SUICIDE_PIN_INVERTING             false
+//#define MKS_PWC
 
+#ifdef MKS_PWC
+  #define SUICIDE_PIN                       PE5   
+  #define SUICIDE_PIN_INVERTING             false
+  #define PLR_PIN                           PA2   // PW_DET
+  #define KILL_PIN                          PA2   // Enable MKSPWC DET PIN
+  #define KILL_PIN_STATE                    true  // Enable MKSPWC PIN STATE
+#endif
 
 //
 // Thermocouples
@@ -185,7 +192,7 @@ BlTouch
 #endif
 
 #define SDIO_SUPPORT
-#define SDIO_CLOCK                       18000000  // 4.5 MHz
+#define SDIO_CLOCK                       18000000  
 #define SD_DETECT_PIN                       PD12
 #define ONBOARD_SD_CS_PIN                   PC11
 
@@ -245,13 +252,27 @@ BlTouch
 #ifdef MKS_WIFI
 
  #define MKS_WIFI_SERIAL_NUM                SERIAL_PORT_2
- #define MKS_WIFI_BAUDRATE                  115200
  #undef PLATFORM_M997_SUPPORT
 
  #define MKS_WIFI_IO0                       PA8
  #define MKS_WIFI_IO4                       PC7
  #define MKS_WIFI_IO_RST                    PA5
 #endif
+
+
+#ifndef XPT2046_X_CALIBRATION
+  #define XPT2046_X_CALIBRATION          17880
+#endif
+#ifndef XPT2046_Y_CALIBRATION
+  #define XPT2046_Y_CALIBRATION         -12234
+#endif
+#ifndef XPT2046_X_OFFSET
+  #define XPT2046_X_OFFSET                 -45
+#endif
+#ifndef XPT2046_Y_OFFSET
+  #define XPT2046_Y_OFFSET                  349
+#endif
+
 
 #if HAS_TMC220x
   /**
